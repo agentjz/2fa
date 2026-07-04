@@ -51,6 +51,10 @@
     grid-template-columns: 1fr;
   }
 
+  .output-actions {
+    grid-template-columns: 1fr;
+  }
+
   .account-item {
     grid-template-columns: 1fr;
     align-items: start;

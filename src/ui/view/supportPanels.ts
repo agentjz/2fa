@@ -49,6 +49,7 @@ function outputQrHtml(state: AppState): string {
         <div class="output-actions">
           <button id="copyOutputUriBtn" class="btn btn-outline-secondary" type="button"><i class="bi bi-clipboard"></i> 复制链接</button>
           <button id="downloadQrBtn" class="btn btn-outline-secondary" type="button" ${cached ? "" : "disabled"}><i class="bi bi-download"></i> 下载图片</button>
+          <button id="exportOfflinePageBtn" class="btn btn-success" type="button"><i class="bi bi-file-earmark-arrow-down"></i> 导出页面</button>
         </div>
         <textarea class="form-control mono qr-uri" rows="3" readonly>${escapeHtml(uri)}</textarea>
       </div>

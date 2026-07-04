@@ -26,8 +26,8 @@ export function livePanelHtml(state: AppState, account: TotpAccount | null): str
 
       <div class="code-row">
         <div id="liveCode" class="code-display mono">------</div>
-        <div id="timerRing" class="timer-ring" style="--progress: 0%">
-          <div class="timer-ring-core mono"><span id="secondsLeft">--</span><small>s</small></div>
+        <div id="timerRing" class="timer-ring" style="--timer-progress: 0%">
+          <div id="secondsLeft" class="timer-ring-core mono">--</div>
         </div>
       </div>
 

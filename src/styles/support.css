@@ -6,8 +6,29 @@
 }
 
 .output-actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
   margin-top: 0;
   margin-bottom: 10px;
+}
+
+.output-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 0;
+  min-height: 44px;
+  padding: 8px 7px;
+  font-size: 0.9rem;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.output-actions .btn .bi {
+  flex: 0 0 auto;
+  font-size: 1rem;
 }
 
 .output-empty {

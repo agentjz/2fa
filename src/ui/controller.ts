@@ -1,9 +1,10 @@
 import type { IScannerControls } from "@zxing/browser";
 import { displayName, generateCode, toOtpAuthUri } from "../core/totp";
+import { saveOfflinePage } from "../export/downloadOfflinePage";
 import { decodeQrImage, qrDataUrl, startQrScanner } from "../qr/qr";
 import { removeAccount, saveAccounts } from "../storage/accountsStore";
 import { clearInputState, syncInputAccount } from "./autoImport";
-import { cssEscape, formatCode, safeFileName, timerTiming } from "./format";
+import { cssEscape, formatCode, safeFileName, timerColor, timerTiming } from "./format";
 import { activeAccount, createAppState } from "./state";
 import type { AppState, Message } from "./types";
 import { appHtml } from "./view/appView";
@@ -29,6 +30,7 @@ export function createController(root: HTMLElement): { state: AppState; render: 
     byId("stopScanBtn")?.addEventListener("click", () => stopScanner());
     byId("copyOutputUriBtn")?.addEventListener("click", copyOutputUri);
     byId("downloadQrBtn")?.addEventListener("click", downloadOutputQr);
+    byId("exportOfflinePageBtn")?.addEventListener("click", downloadOfflinePage);
     byId("copyCodeBtn")?.addEventListener("click", copyActiveCode);
     byId("clearBtn")?.addEventListener("click", clearAllAccounts);
     byId("dismissToastBtn")?.addEventListener("click", () => {
@@ -223,6 +225,14 @@ export function createController(root: HTMLElement): { state: AppState; render: 
     link.click();
   }
 
+  function downloadOfflinePage(): void {
+    const account = activeAccount(state);
+    if (!account) return;
+    saveOfflinePage(account);
+    showMessage("success", "离线页面已导出。");
+    render();
+  }
+
   function updateLiveCodes(): void {
     for (const account of state.accounts) {
       const codeEl = document.querySelector<HTMLElement>(`[data-code-id="${cssEscape(account.id)}"]`);
@@ -237,7 +247,7 @@ export function createController(root: HTMLElement): { state: AppState; render: 
     const ring = document.querySelector<HTMLElement>("#timerRing");
     if (ring) {
       ring.style.setProperty("--timer-progress", `${timing.percent}%`);
-      ring.dataset.level = timing.percent <= 25 ? "low" : timing.percent <= 55 ? "mid" : "high";
+      ring.style.setProperty("--ring-color", timerColor(timing.percent));
     }
   }
 
