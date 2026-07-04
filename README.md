@@ -1,7 +1,7 @@
 # 2FA
 
 <p align="center">
-  <strong>通用 RFC 6238 / TOTP 动态验证器</strong>
+  <strong>通用 2FA 验证器</strong>
 </p>
 
 <p align="center">
@@ -14,5 +14,5 @@
 </p>
 
 <p align="center">
-  <a href="https://agentjz.github.io/2fa/"><strong>打开动态验证器</strong></a>
+  <a href="https://agentjz.github.io/2fa/"><strong>打开 2FA 验证器</strong></a>
 </p>
