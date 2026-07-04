@@ -1,0 +1,27 @@
+{
+  "name": "2fa",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "python start.py",
+    "dev": "vite",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@zxing/browser": "^0.1.5",
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1",
+    "otpauth": "^9.5.1",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "@types/qrcode": "^1.5.6",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.7",
+    "vitest": "^4.0.15"
+  }
+}

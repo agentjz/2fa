@@ -1,0 +1,52 @@
+.input-wrap {
+  position: relative;
+  min-height: 0;
+}
+
+.secret-input {
+  height: 100%;
+  min-height: 180px;
+  resize: vertical;
+  padding: 16px;
+  border-color: var(--app-line-strong);
+  background: #fbfcfe;
+  line-height: 1.55;
+}
+
+.secret-input:focus {
+  border-color: rgba(47, 111, 237, 0.55);
+  box-shadow: 0 0 0 4px rgba(47, 111, 237, 0.12);
+}
+
+.input-status {
+  min-height: 23px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.metadata-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.field-block {
+  display: grid;
+  gap: 6px;
+}
+
+.field-block span,
+.section-kicker {
+  color: var(--app-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.utility-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}

@@ -1,0 +1,17 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+*.log
+*.tmp
+
+# External research material, not project source.
+ref/
+
+# Local editor and OS files.
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
