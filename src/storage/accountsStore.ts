@@ -1,6 +1,6 @@
 import { isTotpAccount, mergeAccounts, type TotpAccount } from "../core/totp";
 
-const STORAGE_KEY = "agentjz.2fa.accounts.v1";
+const STORAGE_KEY = "luckymaomi.2fa.accounts.v1";
 
 export interface StorageLike {
   getItem(key: string): string | null;

@@ -31,7 +31,7 @@ describe("accounts storage", () => {
 
   it("drops malformed storage records", () => {
     const storage = new MemoryStorage();
-    storage.setItem("agentjz.2fa.accounts.v1", JSON.stringify([{ id: "bad" }, fixture()]));
+    storage.setItem("luckymaomi.2fa.accounts.v1", JSON.stringify([{ id: "bad" }, fixture()]));
     expect(loadAccounts(storage)).toHaveLength(1);
   });
 
